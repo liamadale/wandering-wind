@@ -1,0 +1,46 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Full height of the viewport */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Alte Haas Grotesk, serif;
+    line-height: 1.6;
+    background: #cda5ef;
+    min-height: 100%;
+    position: relative;
+}
+
+body::before {
+    background-image:url(../speckles-black.svg)
+}
+
+body::after {
+    background-image: url(../speckles-purple.svg);
+}
+
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    inset: 0; /* Ensure the overlay covers the entire page */
+    pointer-events: none; /* Prevent overlay from blocking interaction */
+    background-position: top; /* Adjust position of the speckles */
+    background-size: contain; /* Ensure proper sizing of speckles */
+    z-index: 1; /* Ensure it appears above all other elements */
+}
+
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main {
+    flex: 1;
+}  

@@ -1,0 +1,57 @@
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: #cda5ef;
+        color: black;
+        max-width: 95%;
+        margin: 0 auto;
+    }
+    
+    .logo {
+        margin-right: 3rem;
+        font-family: Helvetica, sans-serif;
+    }
+
+    .logo-link {
+        text-decoration: none; /* Remove underline */
+        color: black; /* Matches default text color */
+        font-size: 3rem; /* Matches the original header size */
+      }
+    
+      .logo-link:hover {
+        text-decoration: none; /* Ensure no hover underline */
+        color: black; /* Retain text color on hover */
+      }
+
+    .logo h1 {
+        font-size: 3rem;
+        margin: 0;
+    }
+    
+    .nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav a {
+        text-decoration: none;
+        color: black;
+        font-size: 2.5rem;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        padding: 0.5rem 0.5rem;
+    }
+    
+    .nav a:hover {
+        border-color: black;
+        background-color: black;
+        border-radius: 4px;
+        color: #cda5ef;
+        transform: scale(1.05);
+    }
+    
