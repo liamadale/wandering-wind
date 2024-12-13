@@ -3,27 +3,27 @@
         justify-content: space-between;
         align-items: center;
         padding: 1rem 2rem;
-        background-color: #cda5ef;
         color: black;
         max-width: 95%;
         margin: 0 auto;
+        position: relative; /* Required for ::after pseudo-element positioning */
     }
     
     .logo {
         margin-right: 3rem;
-        font-family: Helvetica, sans-serif;
+        font-family: 'Alte Haas Grotesk Bold', serif;
     }
 
     .logo-link {
         text-decoration: none; /* Remove underline */
         color: black; /* Matches default text color */
         font-size: 3rem; /* Matches the original header size */
-      }
-    
-      .logo-link:hover {
+    }
+
+    .logo-link:hover {
         text-decoration: none; /* Ensure no hover underline */
         color: black; /* Retain text color on hover */
-      }
+    }
 
     .logo h1 {
         font-size: 3rem;
@@ -38,13 +38,21 @@
         padding: 0;
     }
     
+    .icon {
+        width: 32px;
+        height: 32px;
+        fill: currentColor; /* Inherits color from parent */
+    }
+    
     .nav a {
-        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
         color: black;
-        font-size: 2.5rem;
-        transition: all 0.3s ease;
         border: 2px solid transparent;
-        padding: 0.5rem 0.5rem;
+        transition: color 0.3s ease;
     }
     
     .nav a:hover {
@@ -52,6 +60,14 @@
         background-color: black;
         border-radius: 4px;
         color: #cda5ef;
-        transform: scale(1.05);
     }
     
+    .header::after {
+        content: "";
+        position: absolute;
+        bottom: 1rem; /* Positioning beneath the header */
+        left: 5%; /* Start line 10% from the left edge */
+        right: 5%; /* End line 10% from the right edge */
+        height: 2px; /* Thickness of the line */
+        background-color: black; /* Line color for contrast */
+    }

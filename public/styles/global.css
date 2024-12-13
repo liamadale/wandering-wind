@@ -1,46 +1,60 @@
+/* Font-face definition for 'Alte Haas Grotesk' */
+@font-face {
+    font-family: 'Alte Haas Grotesk';
+    src: url('../fonts/AlteHaasGroteskRegular.woff') format('woff'), /* Modern browsers */
+         url('../fonts/AlteHaasGroteskRegular.ttf') format('truetype'); /* Legacy browser support */
+}
+
+@font-face {
+    font-family: 'Alte Haas Grotesk Bold';
+    src: url('../fonts/AlteHaasGroteskBold.woff') format('woff'), /* Modern browsers */
+         url('../fonts/AlteHaasGroteskBold.ttf') format('truetype'); /* Legacy browser support */
+}
+
+/* Reset and base styling */
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Full height of the viewport */
+    height: 100%; /* Ensure full viewport height */
 }
 
 body {
     display: flex;
     flex-direction: column;
-    font-family: Alte Haas Grotesk, serif;
-    line-height: 1.6;
-    background: #cda5ef;
-    min-height: 100%;
-    position: relative;
+    font-family: 'Alte Haas Grotesk', serif; /* Use the custom font */
+    line-height: 1.6; /* Improve text readability */
+    background: #cda5ef; /* Light purple background */
+    min-height: 100%; /* Ensures proper body height */
+    position: relative; /* Required for pseudo-elements to position relative to body */
+}
+
+/* Background speckles for decoration */
+body::before, body::after {
+    content: "";
+    position: absolute;
+    inset: 0; /* Cover the entire viewport */
+    pointer-events: none; /* Prevent pseudo-elements from blocking interactions */
+    background-size: contain; /* Scale speckles appropriately */
+    background-position: top; /* Position speckles at the top */
+    z-index: 1; /* Place above other content but below main elements */
 }
 
 body::before {
-    background-image:url(../speckles-black.svg)
+    background-image: url('../speckles-black.svg'); /* Black speckles */
 }
 
 body::after {
-    background-image: url(../speckles-purple.svg);
+    background-image: url('../speckles-purple.svg'); /* Purple speckles */
 }
 
-body::before,
-body::after {
-    content: "";
-    position: absolute;
-    inset: 0; /* Ensure the overlay covers the entire page */
-    pointer-events: none; /* Prevent overlay from blocking interaction */
-    background-position: top; /* Adjust position of the speckles */
-    background-size: contain; /* Ensure proper sizing of speckles */
-    z-index: 1; /* Ensure it appears above all other elements */
-}
-
-
-
+/* Centered container with responsive max-width */
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 90%; /* Responsive width */
+    max-width: 1200px; /* Limit maximum width for better readability */
+    margin: 0 auto; /* Center the container */
 }
 
+/* Main content area takes available space */
 main {
-    flex: 1;
-}  
+    flex: 1; /* Fill remaining vertical space in the flex container */
+}
