@@ -1,57 +1,51 @@
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 2rem;
-        background-color: #cda5ef;
-        color: black;
-        max-width: 95%;
-        margin: 0 auto;
-    }
-    
-    .logo {
-        margin-right: 3rem;
-        font-family: Helvetica, sans-serif;
-    }
-
-    .logo-link {
-        text-decoration: none; /* Remove underline */
-        color: black; /* Matches default text color */
-        font-size: 3rem; /* Matches the original header size */
-      }
-    
-      .logo-link:hover {
-        text-decoration: none; /* Ensure no hover underline */
-        color: black; /* Retain text color on hover */
-      }
-
-    .logo h1 {
-        font-size: 3rem;
-        margin: 0;
-    }
-    
-    .nav ul {
-        list-style: none;
-        display: flex;
-        gap: 1rem;
-        margin: 0;
-        padding: 0;
-    }
-    
-    .nav a {
-        text-decoration: none;
-        color: black;
-        font-size: 2.5rem;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-        padding: 0.5rem 0.5rem;
-    }
-    
-    .nav a:hover {
-        border-color: black;
-        background-color: black;
-        border-radius: 4px;
-        color: #cda5ef;
-        transform: scale(1.05);
-    }
-    
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Header Styling */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #f8f8f8; /* Light background color */
+    border-bottom: 1px solid #ddd; /* Optional border for separation */
+  }
+  
+  /* Logo Styling */
+  .logo {
+    flex-shrink: 0;
+  }
+  
+  .logo-link {
+    text-decoration: none;
+    color: #333; /* Dark text color */
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .logo-link:hover {
+    color: #0073e6; /* Accent color on hover */
+  }
+  
+  /* Navigation Styling */
+  .nav ul {
+    display: flex;
+    gap: 1.5rem; /* Space between links */
+    list-style: none;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  
+  .nav a:hover {
+    color: #0073e6; /* Accent color on hover */
+  }
+  
