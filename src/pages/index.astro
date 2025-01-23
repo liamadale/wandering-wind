@@ -1,26 +1,32 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+interface Section {
+  id: string;
+  title: string;
+  content: string;
+}
+
+const sections: Section[] = [
+  { id: "about", title: "About", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula, nulla a lacinia rutrum, elit lectus egestas urna, sit amet aliquet augue velit ac dui. Nullam in dui id elit pellentesque iaculis vitae quis turpis. Curabitur eu arcu sit amet orci pharetra laoreet. Etiam tincidunt vitae enim sit amet fringilla. Nam egestas suscipit lectus, at tempor tortor aliquet in. Vestibulum congue consequat auctor. Nam eu faucibus nunc. Duis ex tortor, efficitur id purus id, hendrerit porttitor ligula. Sed vulputate consequat felis, ac molestie magna maximus in. Suspendisse nec sem semper, tincidunt nisi ut, aliquam odio. In pharetra justo vel elit blandit, vitae auctor felis iaculis. Nulla dignissim vestibulum tortor, eget pretium lectus malesuada a. Curabitur commodo mi ac erat viverra tincidunt. Praesent quis orci a sem rutrum ultrices. Phasellus ut justo est. Mauris sed eleifend urna, non vehicula nisi." },
+  { id: "experience", title: "Experience", content: "Suspendisse lacinia nisi in auctor facilisis. Phasellus sit amet fringilla leo. Quisque vitae lorem eros. Cras quis eros fringilla, rhoncus mauris vel, molestie mauris. Phasellus ut nulla et orci mollis fringilla. Duis quis lacus finibus, consectetur mauris vitae, fermentum justo. Phasellus ac scelerisque nulla. Nunc ultricies nulla a lorem commodo, sit amet ultrices est rutrum. Etiam sed ullamcorper nisl, venenatis ultricies sem. Quisque convallis at tellus in pretium. Etiam in tincidunt eros. Nulla venenatis ipsum eu orci ultrices imperdiet. Nunc laoreet lectus neque, et venenatis felis ultrices a. Quisque eu interdum urna. Etiam augue lacus, pretium a massa sed, laoreet facilisis diam. Maecenas nec lorem nec justo posuere ornare. " },
+  { id: "projects", title: "Projects", content: "Curabitur ullamcorper facilisis pulvinar. Aenean orci lectus, egestas vitae massa quis, consectetur posuere odio. Nunc ornare velit tellus, tempus consectetur arcu posuere sit amet. Nulla tempus sagittis est, ac bibendum enim consequat ac. Mauris nulla turpis, porta a molestie sit amet, sodales a lacus. Vivamus at erat ut urna aliquam blandit et cursus purus. Vivamus congue justo sed libero cursus tempus. Ut bibendum neque sed suscipit interdum. Phasellus placerat, lectus pharetra bibendum feugiat, sapien erat tristique nisl, sit amet tincidunt elit sapien in libero. Phasellus congue ultrices volutpat. Fusce ut velit id nulla pulvinar venenatis et non odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris eu tellus mollis nibh bibendum accumsan a non ante. " },
+]
+
 ---
 
 <BaseLayout>
-  <section class="hero">
-    <div class="about">
-      <h1>About</h1>
-      <p>
-        Hello! I'm a stinky doo doo head!
-      </p>
-    </div>
-    <div class="experience">
-        <h1>Experience</h1>
-        <p>
-          Hello! I'm a stinky doo doo head!
-        </p>
-    </div>
-    <div class="projects">
-        <h1>Projects</h1>
-        <p>
-          Hello! I'm a stinky doo doo head!
-        </p>
-    </div>
+  <ul class="toc">
+    {sections.map(section => (
+      <li><a href={`#${section.id}`}>{section.title}</a></li>
+    ))}
+  </ul>
+  <section class="content">
+    {sections.map(section => (
+      <div id={section.id} class="section">
+        <h1>{section.title}</h1>
+        <p>{section.content}</p>
+      </div>
+    ))}
   </section>
 </BaseLayout>
